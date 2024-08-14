@@ -1,0 +1,97 @@
+// Instrução para usar o namespace System - Grupo de instruções que evitam conflitos de nome.
+
+using System; 
+using System.Text;
+// ; = fim da linha. //import = traz funcionalidades/using = reconhece recursos (métodos e classes) que estão no namespace.
+
+public class OlaMundo // Classe - engloba uma ou mais funções. public = acessível por outros códigos. /OlaMundo = nome do objeto. Método = sequência de comandos associada ao objeto.
+// public, private, protected, internal, protected internal, private protected.
+{ //Objeto dentro do nível da classe.
+    // Acessível em qualquer lugar:
+    // () parâmetros como array de strings - conjunto de palavras organizadas.
+    public static void Main(string[] args) // Método Main - Ponto de Entrada. static = pertencimento (fixo), segue as direções da Classe OlaMundo e só funciona dentro dela. //void = método sem retorno, não retorna nenhum valor. Precisa ser executado. 
+    {
+        // Habilitar caracteres especiais:
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.WriteLine("Oi, mundo!"); // Console = é uma classe. WriteLine (escreve uma linha). //Exibe texto e números.
+    }
+    // Acessível apenas dentro da classe OlaMundo:
+    // private int PropriedadePrivada {get; set;}
+}
+
+using System; 
+using System.Text;
+// ; = fim da linha. //import = traz funcionalidades/using = reconhece recursos (métodos e classes) que estão no namespace.
+
+public class OlaMundo // Classe - engloba uma ou mais funções. public = acessível por outros códigos. /OlaMundo = nome do objeto. Método = sequência de comandos associada ao objeto.
+// public, private, protected, internal, protected internal, private protected.
+{ //Objeto dentro do nível da classe.
+    // Acessível em qualquer lugar:
+    // () parâmetros como array de strings - conjunto de palavras organizadas.
+    // public static void Main(string[] args) // Método Main - Ponto de Entrada. static = pertencimento (fixo), segue as direções da Classe OlaMundo e só funciona dentro dela. //void = método sem retorno, não retorna nenhum valor. Precisa ser executado. 
+    static void Main()
+    {
+        // Configurar o console para usar UTF-8:
+        Console.OutputEncoding = Encoding.UTF8;
+        
+        // Pedir o nome do usuário:
+        Console.WriteLine("Oi! Qual é o seu nome? ");
+        string nome = Console.ReadLine(); // Lê a entrada do usuário. string = tipo de dado.
+        // Console = é uma classe. WriteLine (escreve uma linha). //Exibe texto e números.
+        
+        // Exibir no console:
+        Console.WriteLine($"Oi, {nome}! Você é incrível.");
+    }
+    // Acessível apenas dentro da classe OlaMundo:
+    // private int PropriedadePrivada {get; set;}
+}
+
+using System;
+using System.Text;
+
+class Programa 
+{
+    static void Main()
+    {
+        // Usar codificação UTF-8 no console:
+        Console.OutputEncoding = Encoding.UTF8;
+        
+        // Pedir ao usuário o nome:
+        Console.Write("Por favor, digite o seu nome: ");
+        string nome = Console.ReadLine();
+        
+        // Pedir ao usuário a data de nascimento:
+        Console.Write("Agora, insira a sua data de nascimento (DD/MM/AAAA): ");
+        string dataNascInput = Console.ReadLine(); // Entrada de dados.
+        
+        // Converter a string de data para o tipo DateTime:
+        DateTime dataNasc;
+        if (DateTime.TryParseExact(dataNascInput, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dataNasc)) // Condição - tenta converter exatamente a data inserida para o formato desejado, se falhar, retorna nulo. Out = resultado.
+        {
+            // Calcular a idade do usuário:
+            int idade = CalcularIdade(dataNasc);
+            
+            // Responder ao usuário no console:
+            Console.WriteLine($"Oi, {nome}! Você tem {idade} anos.");
+        }
+        else // Caso o usuário insira uma data inválida.
+        {
+            Console.WriteLine("Insira uma data de nascimento válida (DD/MM/AAAA).");
+        }
+        
+        static int CalcularIdade(DateTime dataNasc)
+        {
+            // Data atual:
+            DateTime hoje = DateTime.Today;
+            
+            // Calcular a idade:
+            int idade = hoje.Year - dataNasc.Year;
+            
+            // Ajustar a idade se ainda não completou aniversário:
+            if(dataNasc.Date > hoje.AddYears(-idade)) idade--;
+            // idade-- = decrementa idade se a condição for verdadeira:
+            return idade;
+        }
+        
+    }
+}
