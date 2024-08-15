@@ -1,0 +1,114 @@
+atividade 1 - 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicita ao usuário para inserir o nome do funcionário
+        Console.Write("Digite o nome do funcionário: ");
+        string nome = Console.ReadLine();
+        
+        // Exibe o nome inserido
+        Console.WriteLine("Nome do funcionário: " + nome);
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////
+atividades 2 - 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Insira as horas trabalhadas na semana:");
+        int horasTrabalhadas = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Você trabalhou " + horasTrabalhadas + " horas esta semana.");
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+atividades 3 - using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Pede a taxa de pagamento por hora
+        Console.Write("Insira a taxa de pagamento por hora: ");
+        
+        // Lê a entrada do usuário e converte para double
+        double taxaPagamentoPorHora = Convert.ToDouble(Console.ReadLine());
+        
+        // Mostra a taxa inserida
+        Console.WriteLine($"A taxa de pagamento por hora é: {taxaPagamentoPorHora}");
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////
+atividades 4 - 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Solicita ao usuário o valor das comissões recebidas na semana
+        Console.Write("Digite o valor das comissões recebidas na semana: ");
+        
+        // Lê o valor inserido pelo usuário e converte para decimal
+        decimal comissao = Convert.ToDecimal(Console.ReadLine());
+        
+        // Exibe o valor das comissões recebidas
+        Console.WriteLine($"Valor das comissões recebidas: {comissao}");
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////
+atividades 5 - 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Defina as variáveis
+        double horasTrabalhadas;
+        double taxaPagamento;
+        double comissoes;
+
+        // Solicita entrada do usuário
+        Console.Write("Digite o número de horas trabalhadas: ");
+        horasTrabalhadas = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite a taxa de pagamento por hora: ");
+        taxaPagamento = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o valor total das comissões: ");
+        comissoes = Convert.ToDouble(Console.ReadLine());
+
+        // Calcula o salário bruto
+        double salarioBruto = (horasTrabalhadas * taxaPagamento) + comissoes;
+
+        // Exibe o resultado
+        Console.WriteLine("O salário bruto é: R$ " + salarioBruto);
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////
+atividades 6 -
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Nome do funcionário
+        string nome = "kaic marçal costa";
+        
+        // Salário total (decimal)
+        decimal salarioTotal = 2500.75m;
+        
+        // Exibindo as informações
+        Console.WriteLine("Nome do Funcionário: " + nome);
+        Console.WriteLine("Salário Total: " + salarioTotal);
+    }
+}
